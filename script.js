@@ -2,7 +2,10 @@ const container = document.querySelector('.container')
 const btn = document.querySelector('button')
 let gridNumber = 16
 btn.addEventListener('click',()=>{
-    gridNumber = parseInt(prompt('Enter Number of Grids'))
+    do{
+        gridNumber = parseInt(prompt('Enter Number of Grids'))
+    } while(gridNumber > 100 || gridNumber <= 0 || !gridNumber)
+    
     container.innerHTML =''
     for (let i = 0; i < gridNumber; i++){
         const div = document.createElement('div')
